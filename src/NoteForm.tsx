@@ -40,6 +40,11 @@ export function NoteForm({ onSubmit } : NoteFormProps){
                         value={selectedTags.map(tag => {
                             return {label: tag.label, value: tag.id}
                         })} 
+                        onChange={tags => {
+                            setSelectedTags(tags.map(tag => {
+                                return {label: tag.label, id: tag.value}
+                            }))
+                        }}
                         isMulti/>
                     </Form.Group>
                     </Col>
