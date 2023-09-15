@@ -5,6 +5,7 @@ import {v4 as uuidV4} from "uuid";
 
 import { useLocalStorage } from "./useLocalStroage";
 import { NewNote } from './NewNotes';
+import { NoteList } from "./NoteList";
 import { Container } from 'react-bootstrap';
 
 // Type --> is a convenient way to refer to the different properties and functions that a value has. A value is anything that you can assign to a variable e.g., a number, a string, an array, an object, and a function.
@@ -64,7 +65,12 @@ function App() {
     <>
      <Container className='my-3'>
       <Routes>
-        <Route path='/' element={<h1>Home</h1>} />
+        <Route path='/' 
+        element={
+        <NoteList 
+        notes={noteWithTags}
+        availableTags={tags}/>
+        } />
         <Route 
         path='/new' 
         element={
