@@ -106,20 +106,21 @@ function App() {
       <Routes>
         <Route path='/' 
         element={
-        <NoteList 
-        notes={noteWithTags}
-        availableTags={tags}
-        onUpdateTag={updateTag}
-        onDeleteTag={deleteTag}/>
+          <NoteList 
+          notes={noteWithTags}
+          availableTags={tags}
+          onUpdateTag={updateTag}
+          onDeleteTag={deleteTag}/>
         } />
         <Route 
         path='/new' 
         element={
-        <NewNote 
-        onSubmit={onCreateNote} 
-        onAddTag={addTag} 
-        availableTags={tags} 
-        />} />
+          <NewNote 
+          onSubmit={onCreateNote} 
+          onAddTag={addTag} 
+          availableTags={tags} 
+          />} 
+        />
         <Route path='/:id' element={<NoteLayout notes={noteWithTags} /> }>
           <Route index 
           element={<Note onDelete={onDelelteNote}/>} />
